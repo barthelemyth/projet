@@ -1,0 +1,20 @@
+<!-- Message de notification -->
+
+<!-- Code HTML à écrire -->
+
+
+<!-- Liste des aliments -->
+<!-- <table class="generic-table meal-list">
+    <caption>Interface de jeuc</caption>
+    <tbody>
+     
+    </tbody>
+</table> -->
+<h1>Interface de jeu</h1>
+
+<?php if(array_key_exists('user', $_SESSION) == false){ ?>
+<a href="<?= $requestUrl ?>/user/login"><img src="<?= $wwwUrl ?>/images/snake.gif"></a>
+<?php } else{?>
+<a href="<?= $requestUrl ?>/jeux"><img src="<?= $wwwUrl ?>/images/snake.gif"></a>
+<?php } ?>
+

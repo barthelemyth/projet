@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Generation Y</title>
+    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/normalize-3.0.3.min.css">
+    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/font-awesome-4.3.0.min.css">
+
+    <!-- Feuilles de styles de l'application -->
+    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/3wa-resto.css">
+    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/ui-button.css">
+    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/ui-form.css">
+    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/ui-table.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps|Karla">
+
+    <!-- Librairie jQuery -->
+    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+
+    <!-- JavaScript de l'application -->
+    <script src="<?= $wwwUrl ?>/js/utilities.js"></script>
+</head>
+<body>
+
+<!-- En-tête commune -->
+<header>
+    <h1>
+           Bienvenue sur le site generation Y Interface de jeux!
+    </h1>
+
+
+    <nav class="user-interface">
+    <ul class="link-list">
+   
+        
+<?php if(array_key_exists('user', $_SESSION) == true){ ?>
+        <li>
+            <p class="welcome">Bonjour <strong><?= $_SESSION['user']['firstName'] ?></strong> !</p>
+            <a class="button button-primary" href="<?= $requestUrl ?>/user/logout">Deconnection</a>
+        </li>
+        <?php } else {?>
+
+        <li>
+            <a class="button button-primary" href="<?= $requestUrl ?>/user/register">Créer un compte</a>
+        </li>
+
+        <li>
+            <a class="button button-primary" href="<?= $requestUrl ?>/user/login">s'identifier</a>
+        </li>
+        <?php  }?>
+        
+    </ul>
+</nav>
+
+</header>
+
+<!-- Interface utilisateur -->
+<nav class="user-interface">
+    <ul class="link-list">
+        <!-- Code HTML/PHP à écrire -->
+    </ul>
+</nav>
+
+<main>
+    <!-- Affichage du template lié à la vue -->
+    <?php include $this->viewData['template']; ?>
+</main>
+
+<!-- Pied de page commun -->
+<footer>
+    
+</footer>
+
+<!-- Code principal JavaScript de l'application -->
+<script src="<?= $wwwUrl ?>/js/main.js"></script>
+
+</body>
+</html>
